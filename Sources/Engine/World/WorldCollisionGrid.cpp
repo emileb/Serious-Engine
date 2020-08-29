@@ -48,10 +48,10 @@ static inline void BoxToGrid(
   FLOAT fMaxX = boxEntity.Max()(1);
   FLOAT fMaxZ = boxEntity.Max()(3);
 #ifdef __arm__
-#ifdef PANDORA
+#ifdef PLATFORM_PANDORA
   #define Isinf(a) (((*(unsigned int*)&a)&0x7fffffff)==0x7f800000)
 #else
-  #define Isinf isinf
+  #define Isinf isinff
 #endif
   iMinX = (Isinf(fMinX))?INDEX(GRID_MIN):Clamp(INDEX(floor(fMinX/GRID_CELLSIZE)), (INDEX)GRID_MIN, (INDEX)GRID_MAX);
   iMinZ = (Isinf(fMinZ))?INDEX(GRID_MIN):Clamp(INDEX(floor(fMinZ/GRID_CELLSIZE)), (INDEX)GRID_MIN, (INDEX)GRID_MAX);

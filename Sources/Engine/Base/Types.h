@@ -65,7 +65,7 @@ typedef uint32_t UINT;
 #endif
 
 #if defined(__x86_64__) || defined(_M_X64) || defined(__aarch64__) || defined(_ARCH_PPC64) \
-    || defined(_M_IA64) || defined(__IA64__)
+    || defined(_M_IA64) || defined(__IA64__) || defined(__e2k__)
 
   #define PLATFORM_64BIT 1
 
